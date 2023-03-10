@@ -11,14 +11,14 @@ export const MultiplicacionesApp = () => {
   const [visible, setVisible] = useState(true);
 
 useEffect(() => {
-  if (puntaje % 2 === 0 && puntaje != 0 && tabla<=9) {
+  if (puntaje % 20 === 0 && puntaje != 0 && tabla<=9) {
     setTabla(tabla+1);
     setVisible (true);
   }
 }, [puntaje])
 
 useEffect(() => {
-  if (puntaje % 2 === 0 && puntaje != 0 && tabla<=9) {
+  if (puntaje % 20 === 0 && puntaje != 0 && tabla<=9) {
     setVisible(false);
     setTimeout(() => {
     setVisible (true);
