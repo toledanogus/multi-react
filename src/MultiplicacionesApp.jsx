@@ -24,7 +24,7 @@ useEffect(() => {
     setVisible (true);
     }, 1000);
   }
-  else if (puntaje % 2 === 0 && tabla == 10){
+  else if (puntaje % 20 === 0 && tabla == 10){
     setVisible(false);
     setTabla('');
     fin= '¡Felicidades!';
