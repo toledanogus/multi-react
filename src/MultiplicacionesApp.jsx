@@ -63,7 +63,7 @@ export const MultiplicacionesApp = () => {
   }
 
   const calcular2 = (e) => {
-    if (e.key === 'Enter' || e.keyCode === 13 || e.code === 'Enter') {
+    if (e.key === 'Enter' || e.key === 'Return' || e.code === 'Enter') {
       const resultadoU = document.querySelector("#resultado");
       const resultado = tabla * multiplicador;
       if (resultadoU.value == resultado) {
