@@ -33,7 +33,11 @@ export const MultiplicacionesApp = () => {
       setTabla('');
       fin = '¡Felicidades!';
     }
-  }, [puntaje])
+  }, [puntaje]);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   if (arr[0] == multiplicador && arr.length >= 0) {
     setMultiplicador(Math.floor(Math.random() * 10) + 1);
@@ -59,7 +63,7 @@ export const MultiplicacionesApp = () => {
   }
 
   const calcular2 = (e) => {
-    if (e.key === 'Enter' || e.key === 'Accept') {
+    if (e.key === 'Enter' || e.keyCode === 13) {
       const resultadoU = document.querySelector("#resultado");
       const resultado = tabla * multiplicador;
       if (resultadoU.value == resultado) {
