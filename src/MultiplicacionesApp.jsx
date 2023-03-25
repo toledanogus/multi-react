@@ -59,7 +59,7 @@ useEffect(() => {
   }
 
   const calcular2 = (e) => {
-if (e.key === 'Enter' || e.key === 13) {
+if (e.key === 'Enter' || e.key === 'Accept') {
   
 }
     const resultadoU = document.querySelector("#resultado");
