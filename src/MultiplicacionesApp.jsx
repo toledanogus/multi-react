@@ -49,7 +49,8 @@ export const MultiplicacionesApp = () => {
     setTabla(Number(getN));
   }
 
-  const calcular = () => {
+  const calcular = (e) => {
+    e.preventDefault();
     const resultadoU = document.querySelector("#resultado");
     const resultado = tabla * multiplicador;
 
@@ -62,22 +63,22 @@ export const MultiplicacionesApp = () => {
 
   }
 
-const [test, setTest] = useState('');
+  // const [test, setTest] = useState('');
 
-  const calcular2 = (e) => {
-    console.log(e.key);
-    setTest(JSON.stringify(e.key));
-    if (e.key === 'Enter' || e.key === 'Return' || e.code === 'Enter') {
-      const resultadoU = document.querySelector("#resultado");
-      const resultado = tabla * multiplicador;
-      if (resultadoU.value == resultado) {
-        setPuntaje(puntaje + 1);
-        resultadoU.value = "";
-        arr.unshift(multiplicador);
-        setMultiplicador(Math.floor(Math.random() * 10) + 1);
-      }
-    }
-  }
+  //   const calcular2 = (e) => {
+  //     console.log(e.key);
+  //     setTest(JSON.stringify(e.key));
+  //     if (e.key === 'Enter' || e.key === 'Return' || e.code === 'Enter') {
+  //       const resultadoU = document.querySelector("#resultado");
+  //       const resultado = tabla * multiplicador;
+  //       if (resultadoU.value == resultado) {
+  //         setPuntaje(puntaje + 1);
+  //         resultadoU.value = "";
+  //         arr.unshift(multiplicador);
+  //         setMultiplicador(Math.floor(Math.random() * 10) + 1);
+  //       }
+  //     }
+  //   }
 
 
   return (
@@ -86,9 +87,11 @@ const [test, setTest] = useState('');
         visible ? (
           <>
             <h1>Tablas de multiplicar</h1>
-            <div>{tabla} <span>x</span>  {multiplicador} = <input type="number" id="resultado" ref={inputRef} onKeyDown={calcular2}/> </div>
-            <div>{test}</div>
-            <button onClick={calcular}>Verificar</button>
+            <form onSubmit={calcular}>
+              <div>{tabla} <span>x</span>  {multiplicador} = <input type="number" id="resultado" ref={inputRef} /> </div>
+              <div>{ }</div>
+              <button onClick={calcular}>Verificar</button>
+            </form>
             <div>Puntaje = {puntaje}</div>
             <br />
             <div>Elige la tabla que desees: </div>
