@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect, useRef} from "react";
 import PropTypes from "prop-types";
 
 let arr = [];
@@ -78,7 +78,7 @@ if (e.key === 'Enter' || e.key === 13) {
       visible ? (
     <>
     <h1>Tablas de multiplicar</h1>
-    <div>{tabla} <span>x</span>  {multiplicador} = <input type="number" id="resultado"/> </div>
+    <div>{tabla} <span>x</span>  {multiplicador} = <input type="number" id="resultado" ref={inputRef}/> </div>
     <button onClick={calcular} onKeyDown={calcular2}>Verificar</button>
     <div>Puntaje = {puntaje}</div>
     <br />
