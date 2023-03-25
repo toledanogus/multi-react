@@ -62,7 +62,11 @@ export const MultiplicacionesApp = () => {
 
   }
 
+const [test, setTest] = useState('');
+
   const calcular2 = (e) => {
+    console.log(e.key);
+    setTest(JSON.stringify(e.key));
     if (e.key === 'Enter' || e.key === 'Return' || e.code === 'Enter') {
       const resultadoU = document.querySelector("#resultado");
       const resultado = tabla * multiplicador;
@@ -82,7 +86,8 @@ export const MultiplicacionesApp = () => {
         visible ? (
           <>
             <h1>Tablas de multiplicar</h1>
-            <div>{tabla} <span>x</span>  {multiplicador} = <input type="number" id="resultado" ref={inputRef} onKeyUp={calcular2}/> </div>
+            <div>{tabla} <span>x</span>  {multiplicador} = <input type="number" id="resultado" ref={inputRef} onKeyDown={calcular2}/> </div>
+            <div>{test}</div>
             <button onClick={calcular}>Verificar</button>
             <div>Puntaje = {puntaje}</div>
             <br />
