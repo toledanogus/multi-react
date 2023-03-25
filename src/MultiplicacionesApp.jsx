@@ -63,7 +63,7 @@ export const MultiplicacionesApp = () => {
   }
 
   const calcular2 = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' || e.keyCode === 13) {
       const resultadoU = document.querySelector("#resultado");
       const resultado = tabla * multiplicador;
       if (resultadoU.value == resultado) {
@@ -82,8 +82,8 @@ export const MultiplicacionesApp = () => {
         visible ? (
           <>
             <h1>Tablas de multiplicar</h1>
-            <div>{tabla} <span>x</span>  {multiplicador} = <input type="number" id="resultado" ref={inputRef} /> </div>
-            <button onClick={calcular} onKeyDown={calcular2}>Verificar</button>
+            <div>{tabla} <span>x</span>  {multiplicador} = <input type="number" id="resultado" ref={inputRef} onKeyDown={calcular2}/> </div>
+            <button onClick={calcular}>Verificar</button>
             <div>Puntaje = {puntaje}</div>
             <br />
             <div>Elige la tabla que desees: </div>
