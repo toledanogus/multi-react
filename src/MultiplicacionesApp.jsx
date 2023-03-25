@@ -37,7 +37,7 @@ export const MultiplicacionesApp = () => {
 
   useEffect(() => {
     inputRef.current.focus();
-  }, []);
+  }, [puntaje]);
 
   if (arr[0] == multiplicador && arr.length >= 0) {
     setMultiplicador(Math.floor(Math.random() * 10) + 1);
@@ -63,7 +63,7 @@ export const MultiplicacionesApp = () => {
   }
 
   const calcular2 = (e) => {
-    if (e.key === 'Enter' || e.keyCode === 13) {
+    if (e.key === 'Enter') {
       const resultadoU = document.querySelector("#resultado");
       const resultado = tabla * multiplicador;
       if (resultadoU.value == resultado) {
